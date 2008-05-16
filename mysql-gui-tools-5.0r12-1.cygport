@@ -1,0 +1,55 @@
+inherit gnome2
+
+DESCRIPTION="MySQL Administrator and Query Browser"
+HOMEPAGE="http://www.mysql.org/products/tools/"
+SRC_URI="http://mysql.serenitynet.com/Downloads/MySQLGUITools/${P}.tar.gz"
+PATCH_URI="
+	mirror://portage/dev-db/${PN}/files/${PN}-5.0_p8-i18n-fix.patch
+	mirror://portage/dev-db/${PN}/files/${PN}-5.0_p8-lua-modules.patch
+	mirror://portage/dev-db/${PN}/files/${PN}-5.0_p12-workbench-lua.patch
+	mirror://portage/dev-db/${PN}/files/${PN}-5.0_p12-query-browser-sps.patch
+	mirror://portage/dev-db/${PN}/files/${PN}-5.0_p12-libsigc++-2.2.patch
+"
+
+DIFF_EXCLUDES="mysql-migration-tool mysql-workbench po windows
+               aclocal.m4 configure Makefile Makefile.in gtk-doc.make"
+
+# workbench requires wstring
+MY_DIRS="mysql-gui-common mysql-administrator mysql-query-browser" # mysql-workbench"
+
+CXXFLAGS+=" -fexceptions -Dlseek64=lseek"
+
+src_compile() {
+	touch ${S}/mysql-gui-common/library/generic-{canvas/ftgl/unix,runtime/newt}/NO-AUTO-GEN
+
+	for d in ${MY_DIRS}
+	do
+		cd ${S}/${d}
+		gnome2_autoreconf
+		mkdir -p ${B}/${d}
+		lndirs ${S}/${d} ${B}/${d}
+	done
+
+	cd ${B}/mysql-gui-common
+	gnome2_compile \
+		--disable-grt --disable-canvas --enable-readline --enable-i18n \
+		--disable-java-modules \
+		--with-lua-includes=/usr/include/lua50 --with-lua-libs=/usr/lib
+
+	cd ${B}/mysql-administrator
+	gnome2_compile --enable-i18n
+
+	cd ${B}/mysql-query-browser
+	gnome2_compile --with-gtkhtml=libgtkhtml-3.14
+
+#	cd ${B}/mysql-workbench
+#	gnome2_compile
+}
+
+src_install() {
+	for d in ${MY_DIRS}
+	do
+		cd ${B}/${d}
+		cyginstall
+	done
+}

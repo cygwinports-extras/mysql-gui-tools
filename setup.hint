@@ -1,0 +1,13 @@
+category: Database Gnome
+requires: cygwin glib2 glibmm24 gdk-pixbuf2 gtk2-x11 gtkhtml314 gtkmm24 libglade2 libgnome2 libiconv2 libintl8 libmysqlclient15 libpcre0 libsigc++20 libxml2 pango
+sdesc: "MySQL Administrator and Query Browser"
+ldesc: "MySQL Administrator is a powerful visual administration tool 
+that makes it easy to administer and monitor your MySQL environment and 
+gain significantly better visibility into how your databases are 
+operating.
+
+MySQL Query Browser is the easiest visual tool for creating, executing,
+and optimizing SQL queries for your MySQL Database Server. The MySQL
+Query Browser gives you a complete set of drag-and-drop tools to
+visually build, analyze and manage your queries."
+
