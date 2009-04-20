@@ -1,0 +1,20 @@
+--- origsrc/mysql-gui-tools-5.0r12/mysql-gui-common/tools/grtsh/Makefile.am	2006-09-05 17:04:50.000000000 -0500
++++ src/mysql-gui-tools-5.0r12/mysql-gui-common/tools/grtsh/Makefile.am	2008-05-16 07:42:42.562500000 -0500
+@@ -9,7 +9,7 @@
+ if BUILD_NEWT
+ newt_libs= $(top_builddir)/library/generic-runtime/source/.libs/libgrttextui.a\
+ 	$(top_builddir)/library/generic-runtime/newt/libmnewt.a \
+-	@SLANG_LIB@ -ltermcap -lncurses
++	@SLANG_LIB@ -lncurses
+ newt_flag= -DENABLE_TEXTUI
+ endif
+ 
+@@ -18,7 +18,7 @@
+ endif
+ 
+ if USE_READLINE
+-rl_libs=-lncurses -lreadline -lhistory -ltermcap
++rl_libs=-lncurses -lreadline -lhistory
+ grtsh_CPPFLAGS=-DUSE_READLINE 
+ endif
+ 

@@ -1,0 +1,21 @@
+--- origsrc/mysql-gui-tools-5.0r12/mysql-gui-common/configure.in	2007-03-29 09:46:22.000000000 -0500
++++ src/mysql-gui-tools-5.0r12/mysql-gui-common/configure.in	2008-05-16 13:40:18.562500000 -0500
+@@ -328,15 +328,15 @@
+ AC_MSG_CHECKING([for unicode support in pcre])
+ ac_savelibs=$LIBS
+ ac_savecpp=$CPPFLAGS
+-LIBS=`pcre-config --libs`
+-CPPFLAS=`pcre-config --cflags`
++LIBS="$PCRE_LIBS"
++CPPFLAGS="$PCRE_CFLAGS"
+ AC_RUN_IFELSE([AC_LANG_PROGRAM([#include <pcre.h>], [
+   char *err= NULL;
+   int o;
+   if (pcre_compile("(?:\\\\pL(?:\\\\pL|\\\\pN|\\\\pM|\\\\p{Pc}|\\\\p{Pd}|\\\\pS}|_)*)", PCRE_UTF8, &err, &o, NULL)) 
+     return 0;
+   return 1;
+-])], [HAVE_UNICODE_PCRE=1 AC_MSG_RESULT(yes)], [HAVE_UNICODE_PCRE=0 AC_MSG_RESULT(no)])
++])], [HAVE_UNICODE_PCRE=1; AC_MSG_RESULT(yes)], [HAVE_UNICODE_PCRE=0; AC_MSG_RESULT(no)])
+ CPPFLAGS=$ac_savecpp
+ LIBS=$ac_savelibs
+ AC_DEFINE(HAVE_UNICODE_PCRE, [], [whether pcre was compiled with unicode properties support])

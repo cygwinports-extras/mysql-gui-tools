@@ -1,0 +1,35 @@
+--- origsrc/mysql-gui-tools-5.0r12/mysql-administrator/source/linux/Makefile.am	2006-12-05 16:46:58.000000000 -0600
++++ src/mysql-gui-tools-5.0r12/mysql-administrator/source/linux/Makefile.am	2008-05-16 14:09:11.484375000 -0500
+@@ -45,10 +45,10 @@
+ # mysql_administrator_bin_LDFLAGS=-pthread
+ 
+ mysql_administrator_bin_LDADD=\
+-	$(top_srcdir)/library/source/libadmin.a\
+-	$(top_srcdir)/../mysql-gui-common/source/linux/libmacommongui.a\
+-	$(top_srcdir)/../mysql-gui-common/library/base-library/source/.libs/libmysqlx.a\
+-	$(top_srcdir)/../mysql-gui-common/library/sql-parser/source/.libs/libsqlparser.a\
+-	$(top_srcdir)/../mysql-gui-common/library/utilities/source/.libs/libguiutil.a\
++	$(top_builddir)/library/source/libadmin.a\
++	$(top_builddir)/../mysql-gui-common/source/linux/libmacommongui.a\
++	$(top_builddir)/../mysql-gui-common/library/base-library/source/.libs/libmysqlx.a\
++	$(top_builddir)/../mysql-gui-common/library/sql-parser/source/.libs/libsqlparser.a\
++	$(top_builddir)/../mysql-gui-common/library/utilities/source/.libs/libguiutil.a\
+ 	@MYSQL_LIBS@ @GNOME_LIBS@ @UTIL_LIBS@ @PCRE_LIBS@
+ 
+--- origsrc/mysql-gui-tools-5.0r12/mysql-administrator/source/util/Makefile.am	2006-10-18 04:57:48.000000000 -0500
++++ src/mysql-gui-tools-5.0r12/mysql-administrator/source/util/Makefile.am	2008-05-16 14:52:20.843750000 -0500
+@@ -15,10 +15,10 @@
+ 
+ 
+ mabackup_LDADD=\
+-        $(top_srcdir)/library/source/libadmin.a\
+-        $(top_srcdir)/../mysql-gui-common/library/base-library/source/.libs/libmysqlx.a\
+-        $(top_srcdir)/../mysql-gui-common/library/utilities/source/.libs/libguiutil.a\
+-        $(top_srcdir)/../mysql-gui-common/library/sql-parser/source/.libs/libsqlparser.a\
++        $(top_builddir)/library/source/libadmin.a\
++        $(top_builddir)/../mysql-gui-common/library/base-library/source/.libs/libmysqlx.a\
++        $(top_builddir)/../mysql-gui-common/library/utilities/source/.libs/libguiutil.a\
++        $(top_builddir)/../mysql-gui-common/library/sql-parser/source/.libs/libsqlparser.a\
+         @MYSQL_LIBS@ @PCRE_LIBS@ @GLIB_LIBS@
+ 
+ 

@@ -10,35 +10,39 @@ Query Browser gives you a complete set of drag-and-drop tools to
 visually build, analyze and manage your queries.
 
 Runtime requirements:
-  cygwin-1.5.25-11
-  gdk-pixbuf2-2.12.9-1
-  glib2-2.14.6-1
-  glibmm24-2.14.2-1
-  gtk2-x11-2.12.9-1
-  gtkhtml314-3.16.3-1
-  gtkmm24-2.12.7-1
-  libglade2-2.6.2-1
-  libgnome2-2.20.1.1-1
-  libiconv2-1.11-1
-  libintl8-0.15-1
-  libmysqlclient15-5.0.51-1
-  libpcre0-7.6-2
-  libsigc++20-2.1.1-1
-  libxml2-2.6.32-1
-  pango-1.18.4-1
+  cygwin-1.7.0-45
+  libatkmm1.6_1-2.16.0-1
+  libgcc1-4.3.2-2
+  libgdk_pixbuf2.0_0-2.16.0-1
+  libglade2.0_0-2.6.4-1
+  libglib2.0_0-2.20.0-1
+  libglibmm2.4_1-2.20.0-1
+  libgnome2_0-2.26.0-1
+  libgtk2.0_0-2.16.0-1
+  libgtkhtml3.14_19-3.26.0-1
+  libgtkmm2.4_1-2.16.0-1
+  libiconv2-1.12-10
+  libintl8-0.17-10
+  libmysqlclient16-5.1.32-1
+  libpango1.0_0-1.24.0-1
+  libpangomm1.4_1-2.24.0-1
+  libpcre0-7.8-10
+  libsigc2.0_0-2.2.3-10
+  libstdc++6-4.3.2-2
+  libxml2-2.7.3-10
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.61-1
-  automake1.9-1.9.6-2
-  binutils-20060817-1
-  cygport-0.3.11-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  gnome-common-2.20.0-1
-  libtool-2.2.2-2
-  make-3.81-1
-  pkg-config-0.21-1
+  autoconf2.5-2.63-10
+  automake1.9-1.9.6-10
+  binutils-20080624-2
+  cygport-0.9.6-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  gnome-common-2.26.0-1
+  libtool-2.2.7a-12
+  make-3.81-2
+  pkg-config-0.23b-10
   sed-4.1.5-2
 
 Canonical website:
@@ -482,8 +486,8 @@ Files included in the binary package:
 
 Port Notes:
 
------ version 5.0r12-1 -----
-Initial release for Cygwin.
+----- version 5.0r12-10 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
